@@ -1,5 +1,6 @@
 package com.example.ashryan.funfacts;
 
+import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,8 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Random;
 
-public class FunFactsActivity extends ActionBarActivity {
+
+public class FunFactsActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,9 @@ public class FunFactsActivity extends ActionBarActivity {
                 // The button was clicked; update the fact label with a new fact
                 String fact = "";
                 // Randomly select a fact
+                Random randomGenerator = new Random();
+                int randomNumber = randomGenerator.nextInt(3);
+                fact = randomNumber + "";
 
                 // Update the label with the fact
                 factLabel.setText(fact);
