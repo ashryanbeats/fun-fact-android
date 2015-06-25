@@ -17,6 +17,7 @@ import java.util.Random;
 public class FunFactsActivity extends Activity {
 
     private FactBook mFactBook = new FactBook();
+    private ColorWheel mColorWheel = new ColorWheel();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,7 @@ public class FunFactsActivity extends Activity {
 
         // Declare our View variables and assign the views from the layout file
         final TextView factLabel = (TextView) findViewById(R.id.factTextView);
-        Button showFactButton = (Button) findViewById(R.id.showFactButton);
+        final Button showFactButton = (Button) findViewById(R.id.showFactButton);
         final RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
 
         View.OnClickListener listener = new View.OnClickListener() {
@@ -34,7 +35,10 @@ public class FunFactsActivity extends Activity {
                 String fact = mFactBook.getFact();
                 // Update the label with the fact
                 factLabel.setText(fact);
-                relativeLayout.setBackgroundColor(Color.RED);
+
+                int color = mColorWheel.getColor();
+                relativeLayout.setBackgroundColor(color);
+                showFactButton.setTextColor(color);
             }
         };
         showFactButton.setOnClickListener(listener);

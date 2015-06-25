@@ -6,7 +6,7 @@ import java.util.Random;
  * Created by ashryan on 6/24/15.
  */
 public class FactBook {
-    public String[] mFacts = {
+    public String[] facts = {
             "Ants stretch when they wake up in the morning.",
             "Ostriches can run faster than horses.",
             "Olympic gold medals are actually made mostly of silver.",
@@ -26,9 +26,9 @@ public class FactBook {
 
         // Randomly generate a number
         Random randomGenerator = new Random();
-        int randomNumber = randomGenerator.nextInt(mFacts.length);
+        int randomNumber = randomGenerator.nextInt(facts.length);
 
-        fact = mFacts[randomNumber];
+        fact = facts[randomNumber];
 
         return fact;
     }
