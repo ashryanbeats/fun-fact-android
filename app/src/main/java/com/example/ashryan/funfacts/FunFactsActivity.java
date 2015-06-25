@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +17,8 @@ import java.util.Random;
 
 
 public class FunFactsActivity extends Activity {
+
+    public static final String TAG = FunFactsActivity.class.getSimpleName();
 
     private FactBook mFactBook = new FactBook();
     private ColorWheel mColorWheel = new ColorWheel();
@@ -45,6 +48,7 @@ public class FunFactsActivity extends Activity {
         showFactButton.setOnClickListener(listener);
 
         Toast.makeText(this, "Yay!", Toast.LENGTH_LONG).show();
+        Log.d(TAG, "Logging from onCreate()");
     }
 
 }
