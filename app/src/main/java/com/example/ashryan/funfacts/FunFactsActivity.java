@@ -23,8 +23,10 @@ public class FunFactsActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 // The button was clicked; update the fact label with a new fact
-                String fact;
+                String fact = "";
                 // Randomly select a fact
+
+                // Update the label with the fact
                 factLabel.setText(fact);
             }
         };
