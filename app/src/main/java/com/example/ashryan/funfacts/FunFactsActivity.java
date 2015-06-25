@@ -4,6 +4,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 public class FunFactsActivity extends ActionBarActivity {
@@ -14,8 +17,18 @@ public class FunFactsActivity extends ActionBarActivity {
         setContentView(R.layout.activity_fun_facts);
 
         // Declare our View variables and assign the views from the layout file
-        TextView factLabel = (TextView) findViewById(R.id.factTextView);
-        Button showFactButton;
+        final TextView factLabel = (TextView) findViewById(R.id.factTextView);
+        Button showFactButton = (Button) findViewById(R.id.showFactButton);
+        View.OnClickListener listener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // The button was clicked; update the fact label with a new fact
+                String fact;
+                // Randomly select a fact
+                factLabel.setText(fact);
+            }
+        };
+        showFactButton.setOnClickListener(listener);
     }
 
     @Override
