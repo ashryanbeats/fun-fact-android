@@ -14,6 +14,8 @@ import java.util.Random;
 
 public class FunFactsActivity extends Activity {
 
+    private FactBook mFactBook = new FactBook();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +27,9 @@ public class FunFactsActivity extends Activity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String fact = mFactBook.getFact();
                 // Update the label with the fact
-                factLabel.setText("");
+                factLabel.setText(fact);
             }
         };
         showFactButton.setOnClickListener(listener);
