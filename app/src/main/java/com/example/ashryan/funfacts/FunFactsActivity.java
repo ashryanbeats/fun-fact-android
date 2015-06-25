@@ -27,10 +27,24 @@ public class FunFactsActivity extends Activity {
             public void onClick(View v) {
                 // The button was clicked; update the fact label with a new fact
                 String fact = "";
-                // Randomly select a fact
+
+                // Randomly generate a number
                 Random randomGenerator = new Random();
                 int randomNumber = randomGenerator.nextInt(3);
-                fact = randomNumber + "";
+
+                // Convert number to fact
+                if (randomNumber == 0) {
+                    fact = "Ants stretch when they wake up in the morning.";
+                }
+                else if (randomNumber == 1) {
+                    fact = "Ostriches can run faster than horses.";
+                }
+                else if (randomNumber == 2) {
+                    fact = "Olympic gold medals are actually made mostly of silver.";
+                }
+                else {
+                    fact = "Sorry, there was an error.";
+                }
 
                 // Update the label with the fact
                 factLabel.setText(fact);
